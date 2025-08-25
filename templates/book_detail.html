@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}{{ book.title }}{% endblock %}
+{% block content %}
+<div class="glass-card"> 
+    <div class="book-detail-container">
+        <div class="book-detail">
+            <div class="book-image">
+                <img src="/{{ book.cover_image }}" alt="Book Cover">
+            </div>
+            <div class="book-info">
+                <h2>{{ book.title }}</h2>
+                <p>By {{ book.author }}</p>
+                <p><strong>Price: ₹{{ book.price }}</strong></p>
+                <p>{{ book.description }}</p>
+                <div class="book-buttons">
+                    <a href="{{url_for('Buy_Now')}}"><button>Buy Now</button></a>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

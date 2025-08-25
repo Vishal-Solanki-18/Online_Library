@@ -1,0 +1,27 @@
+input{
+    width: 40%;
+    height: 30px;
+    font-size: 20px;
+    margin-bottom: 10px;
+    
+    
+}
+label{
+    width: 40%;
+    height: 30px;
+    font-size: 20px;
+    font-weight: 800;
+}
+select{
+    width: 40%;
+    height: 30px;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+button{
+    width: 40%;
+    height: 30px;
+    font-size: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}

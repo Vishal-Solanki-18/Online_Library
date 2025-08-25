@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='payment.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="address">
+            <h1>Delivering To Address</h1>
+            <label> Flat, House no, Building, Company, Apartment</label><br>
+            <input type="text"><br>
+            <label>Area, Street, Secter, Village</label><br>
+            <input type="text"><br>
+            <label>Pincode</label><br>
+            <input type="text"><br>
+            <label>State</label><br>
+            <select>
+                <option>Gujrat</option>
+                <option>Rajesthan</option>
+                <option>Maharastra</option>
+                <option>Delhi</option>
+                <option>Utter Pradesh</option>
+            </select><br>
+            <button>Continue</button>
+        </div>
+    </div>
+     
+</body>
+</html>

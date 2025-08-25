@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Bookstore{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+    <script src="{{ url_for('static', filename='base.js') }}"></script>
+    
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <!-- Menu Icon -->
+        <div class="menu-icon" onclick="toggleSidebar()">&#9776;</div>
+
+        <!-- Brand Title -->
+        <h1>Bookstore</h1>
+
+        <!-- Login/Username Button -->
+        {% if name %}
+        <button class="base-login-button">{{ name }}</button>
+        {% else %}
+        <a href="{{ url_for('login') }}"><button class="base-login-button">Login</button></a>
+        {% endif %}
+    </header>
+
+    <!-- Sidebar Section -->
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('cart') }}">Cart</a></li>
+            <li><a href="{{ url_for('placed_order') }}">Placed Orders</a></li>
+            <li><a href="{{ url_for('about_us') }}">About Us</a></li>
+            <li><a href="{{ url_for('seller_registration') }}">Become Seller</a></li>
+            {% if name %}
+            <li><a href="{{ url_for('logout') }}" class="logout-btn">Logout</a></li>
+            {% endif %}
+        </ul>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="content">
+        {% block content %}
+        <!-- Content will be injected here -->
+        {% endblock %}
+    </div>
+</body>
+</html>

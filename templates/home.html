@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Bookstore{% endblock %}
+{% block content %}
+<div class="glass-card">
+    <div class="books-container">
+        <h2>Our Book Collection</h2>
+        <div class="book-list">
+            {% for book in books %}
+            <div class="book-item">
+                <img src="{{ book.cover_image }}" alt="Book Cover">
+                <h3>{{ book.title }}</h3>
+                <p>{{ book.author }}</p>
+                <p>₹{{ book.price }}</p>
+                <a href="{{ url_for('book_detail', book_id=book._id) }}">Read More</a>
+            </div>
+            {% endfor %}
+        </div>
+    
+        <!-- Pagination Controls -->
+        <div class="pagination-controls">
+            {% if page > 1 %}
+            <a href="{{ url_for('home', page=page-1) }}">Previous</a>
+            {% endif %}
+            Page {{ page }} of {{ total_pages }}
+            {% if page < total_pages %}
+            <a href="{{ url_for('home', page=page+1) }}">Next</a>
+            {% endif %}
+        </div>
+    </div>    
+</div>
+{% endblock %}

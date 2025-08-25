@@ -137,9 +137,3 @@ Contributions are welcome!
 4. Push & open a Pull Request
 
 ---
-
-## 📜 License
-
-This project is licensed under the **MIT License** – free to use and modify.
-
----
